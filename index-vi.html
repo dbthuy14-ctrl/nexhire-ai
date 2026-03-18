@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexHire AI - Tuyển dụng & Tìm việc Không Định kiến</title>
+    <meta name="description" content="Nền tảng tuyển dụng AI 2 chiều. Giúp nhà tuyển dụng tiết kiệm chi phí, ứng viên được nhận việc nhờ kỹ năng thực sự thay vì chỉ qua hồ sơ.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-brain"></i>
+                NexHire<span>AI</span>
+            </a>
+            
+            <!-- Global Portal Toggle in Nav -->
+            <div class="portal-toggle-container fade-in-up">
+                <div class="portal-toggle">
+                    <button class="toggle-btn active" data-target="employer-portal">Tôi Đang Tuyển Người</button>
+                    <button class="toggle-btn" data-target="candidate-portal">Tôi Là Ứng Viên</button>
+                    <div class="toggle-slider"></div>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="#how-it-works">Cách Hoạt Động</a>
+                <a href="#features">Tính Năng</a>
+                <a href="#pricing">Bảng Giá</a>
+            </div>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 1rem;">
+                <div class="lang-switch" style="font-size: 0.875rem;">
+                    <a href="index.html" style="color: var(--text-secondary);">EN</a> 
+                    <span style="color: var(--text-secondary); margin: 0 4px;">|</span> 
+                    <span style="color: white; font-weight: 600;">VI</span>
+                </div>
+                <a href="#pricing" class="btn btn-primary" id="nav-cta-btn">Nhận Tư Vấn Tuyển Dụng</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         EMPLOYER PORTAL
+         ========================================== -->
+    <div id="employer-portal" class="portal-view active">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="container hero-container">
+                <div class="hero-content fade-in-up">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Dành Cho Nhà Tuyển Dụng
+                    </div>
+                    <h1 class="hero-title">
+                        Tuyển Dụng Thông Minh. <br>
+                        <span class="text-gradient">Nhanh Chóng. Kịch Khách Quan.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Thay thế dịch vụ săn đầu người đắt đỏ. Sử dụng AI để đánh giá, kiểm tra và xếp hạng ứng viên hoàn toàn khách quan. Bạn luôn là người chốt quyết định cuối cùng.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#pricing" class="btn btn-primary btn-large">
+                            Bắt Đầu Tuyển Dụng <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#pricing" class="btn btn-secondary btn-large">
+                            Xem Bảng Giá
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">72h</span>
+                            <span class="stat-label">Thời gian Tuyển Mục tiêu</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">80%</span>
+                            <span class="stat-label">Giảm Chi Phí Định Mức</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Công Tâm Từ Trí Tuệ Nhân Tạo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual fade-in-up delay-1">
+                    <div class="glass-card mockup-card">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="mockup-title">Ứng Viên Hàng Đầu - Senior Product Manager</div>
+                        </div>
+                        <div class="mockup-body">
+                            <!-- Candidate 1 -->
+                            <div class="candidate-row">
+                                <div class="candidate-info">
+                                    <img src="https://ui-avatars.com/api/?name=Sarah+Jen&background=8b5cf6&color=fff" alt="Sarah" class="avatar">
+                                    <div>
+                                        <div class="name">Sarah Jenkins</div>
+                                        <div class="role">Khớp 99% • Đã Kiểm Tra bằng AI</div>
+                                    </div>
+                                </div>
+                                <div class="candidate-score gradient-score">99</div>
+                            </div>
+                            <!-- Candidate 2 -->
+                            <div class="candidate-row">
+                                <div class="candidate-info">
+                                    <img src="https://ui-avatars.com/api/?name=Marcus+T&background=3b82f6&color=fff" alt="Marcus" class="avatar">
+                                    <div>
+                                        <div class="name">Marcus Thompson</div>
+                                        <div class="role">Khớp 94% • Đã Kiểm Tra bằng AI</div>
+                                    </div>
+                                </div>
+                                <div class="candidate-score">94</div>
+                            </div>
+                            <!-- Candidate 3 -->
+                            <div class="candidate-row">
+                                <div class="candidate-info">
+                                    <img src="https://ui-avatars.com/api/?name=Emily+R&background=0ea5e9&color=fff" alt="Emily" class="avatar">
+                                    <div>
+                                        <div class="name">Emily Rodriguez</div>
+                                        <div class="role">Khớp 88% • Đã Khảo Sát bằng AI</div>
+                                    </div>
+                                </div>
+                                <div class="candidate-score">88</div>
+                            </div>
+                            <div class="mockup-action">
+                                <button class="btn btn-primary btn-full">Lên Lịch Phỏng Vấn</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-1">
+                        <i class="fa-solid fa-check-double text-primary"></i>
+                        <span>Sàng Sọc Không Định Kiến</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fa-solid fa-video text-secondary"></i>
+                        <span>Bao gồm Video Tự Ghép</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title">Quy Trình Hoạt Động</h2>
+                    <p class="section-subtitle">Từ bước đăng tin tuyển dụng đến khi tiếp nhận thành viên xuất sắc mới vào nhóm bạn trong 4 bước đơn giản.</p>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step-card glass-card fade-in-up">
+                        <div class="step-number">01</div>
+                        <div class="step-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>AI Tự Động Tạo Tin Tuyển Dụng</h3>
+                        <p>Chỉ cần nhập vài từ khóa (VD: "Cần tuyển Senior React Dev"). AI tích hợp của chúng tôi sẽ lập tức viết ra bản mô tả công việc tối ưu và hấp dẫn nhất.</p>
+                    </div>
+                    
+                    <div class="step-card glass-card fade-in-up delay-1">
+                        <div class="step-number">02</div>
+                        <div class="step-icon"><i class="fa-solid fa-users-viewfinder"></i></div>
+                        <h3>Ứng Viên Gửi Hồ Sơ</h3>
+                        <p>Những người nộp đơn gửi CV, liên kết với tài khoản LinkedIn, và đính kèm video ngắn 1 phút để thể hiện con người họ.</p>
+                    </div>
+                    
+                    <div class="step-card glass-card fade-in-up delay-2">
+                        <div class="step-number">03</div>
+                        <div class="step-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>AI Chấm Điểm & Xếp Hạng</h3>
+                        <p>AI tiến hành sàng duyệt hồ sơ và thiết kế những bài Test để chấm điểm một cách khách quan nhất dựa trên độ phù hợp của tính chất công việc.</p>
+                    </div>
+                    
+                    <div class="step-card glass-card fade-in-up delay-3">
+                        <div class="step-number">04</div>
+                        <div class="step-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h3>Đánh Giá & Tuyển</h3>
+                        <p>Bạn xem xét qua top những hồ sơ được cho điểm cao nhất, xem trực quan biểu đồ trực tuyến và có một quyết định thuê người hoàn hảo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section section-alt">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title">Tất cả những công cụ bạn cần để xây dựng đôi nhóm mơ ước</h2>
+                    <p class="section-subtitle">Tạo cho bạn một cái nhìn khách quan từ góc độ toàn cảnh về bản thân mỗi ứng viên.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card glass-card fade-in-up">
+                        <div class="feature-icon bg-gradient-1"><i class="fa-solid fa-file-shield"></i></div>
+                        <h3>Sàng lọc Hồ Sơ Tuyển Dụng bởi AI</h3>
+                        <p>Thông tin, nội dung quan trọng về chuyên môn. Con Bot rà sơ qua những thông tin, chú trọng vào năng lực thực sự của ứng viên.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in-up delay-1">
+                        <div class="feature-icon bg-gradient-2"><i class="fa-solid fa-list-check"></i></div>
+                        <h3>Sinh bài Test theo Vị Trí Công Việc</h3>
+                        <p>Sự kiểm tra thay đổi phù hợp và đúng vị trí công việc. Kiểm tra năng lực chuyên môn, suy luận toán học và thái độ tính cách.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in-up delay-2">
+                        <div class="feature-icon bg-gradient-3"><i class="fa-solid fa-ranking-star"></i></div>
+                        <h3>Hệ Thống Chấm Điểm Ưu Tiên</h3>
+                        <p>Tạm biệt trò dự đoán. Hãy cảm nhận một mức điểm được kiểm soát thông qua toán học từ bản thân, quá trình trải nghiệm và làm bài tập.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in-up">
+                        <div class="feature-icon bg-gradient-4"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h3>Loại bỏ sự Ưu ái</h3>
+                        <p>Cấu trúc giải phóng khỏi yếu tố định danh, mang lại một phương pháp công bằng tập trung trực tiếp vô hiệu quả từ đôi tay.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in-up delay-1">
+                        <div class="feature-icon bg-gradient-1"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>AI Viết Tin Tích Hợp</h3>
+                        <p>Không cần đau đầu viết mô tả công việc nữa. AI sẽ tự động tạo ra những bản tin tuyển dụng chuyên nghiệp, thu hút nhân tài hàng đầu.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in-up delay-2">
+                        <div class="feature-icon bg-gradient-2"><i class="fa-solid fa-circle-play"></i></div>
+                        <h3>Lăng Kính Hồ Sơ Xuyên Góc</h3>
+                        <p>Bắt trọn thông tin trước phỏng vấn. Kiểm tra những liên kết Linkedln kết nối đa diện qua những giây video pitch ứng viên ngắn gọn.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in-up">
+                        <div class="feature-icon bg-gradient-3"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3>Hệ Quản Trị Trung Tâm</h3>
+                        <p>Một sân quản lý quan trọng để giải quyết nhân sự. Theo dõi ứng viên rút gọn, quản lý tiến độ và làm việc nhóm liền mạch.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in-up delay-1">
+                        <div class="feature-icon bg-gradient-4"><i class="fa-solid fa-calendar-check"></i></div>
+                        <h3>Lên Lịch Phỏng Vấn Tự Động</h3>
+                        <p>Để AI xử lý lịch trình. Tự động đồng bộ lịch và xếp lịch phỏng vấn với các ứng viên hàng đầu của bạn ngay lập tức.</p>
+                    </div>
+                    <div class="feature-card glass-card fade-in-up delay-2">
+                        <div class="feature-icon bg-gradient-1"><i class="fa-solid fa-user-shield"></i></div>
+                        <h3>AI Phát Hiện Gian Lận</h3>
+                        <p>Đảm bảo kết quả bài kiểm tra xác thực. Động cơ phân tích video và hành vi để bảo đảm sự trung thực tuyệt đối.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 class="section-title">Mức Giá Đồng Thuận, Không Cờ Hoa</h2>
+                    <p class="section-subtitle">Không phí ẩn từ Headhunter. Lựa chọn mức giá đúng phù hợp cho kích thước tăng trưởng của bạn.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Starter Plan -->
+                    <div class="pricing-card glass-card fade-in-up">
+                        <div class="pricing-header">
+                            <h3>Khởi Động</h3>
+                            <p>Hiệu quả kinh tế cho nhu cầu tuyển dụng thỉnh thoảng.</p>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">299</span>
+                                <span class="billing">/ thanh toán một lần</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> 1 Tin Tuyển Dụng Động</li>
+                                <li><i class="fa-solid fa-check"></i> Giới hạn 50 Đơn Hồ Sơ Quét</li>
+                                <li><i class="fa-solid fa-check"></i> Khởi chạy AI Đọc CV Tiêu Chuẩn</li>
+                                <li><i class="fa-solid fa-check"></i> Test Thử Nghiệm Chuẩn Mô Phỏng Đăng</li>
+                                <li><i class="fa-solid fa-check"></i> Liên kết LinkedIn & Video</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-action">
+                            <button class="btn btn-outline btn-full payment-btn" data-plan="starter">Bắt Đầu Tuyển Dụng</button>
+                        </div>
+                    </div>
+
+                    <!-- Pro Plan -->
+                    <div class="pricing-card glass-card popular fade-in-up delay-1">
+                        <div class="popular-badge">Đề Xuất</div>
+                        <div class="pricing-header">
+                            <h3>Chuyên Gia</h3>
+                            <p>Cho công ty doanh nghiệp muốn mở rộng nhân sự dài hạn.</p>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">1,490</span>
+                                <span class="billing">/ năm</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> <strong>Không giới hạn</strong> Đăng Công việc</li>
+                                <li><i class="fa-solid fa-check"></i> <strong>Không giới hạn</strong> Quét Ứng viên</li>
+                                <li><i class="fa-solid fa-check"></i> Trí tuệ Phân tích Số Liệu Chuyên Môn Ngầm</li>
+                                <li><i class="fa-solid fa-check"></i> Thử Nghiệm Tiên Tiến Khảo Sát Custom AI</li>
+                                <li><i class="fa-solid fa-check"></i> Quản Lý Tài Khoản Khách Hàng Chuẩn Nhất</li>
+                                <li><i class="fa-solid fa-check"></i> Bảng Chỉ Số Sức Khỏe của Employer Branding</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-action">
+                            <button class="btn btn-primary btn-full payment-btn" data-plan="pro">Mua Goi Dịch Vụ <i class="fa-solid fa-bolt"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-trust fade-in-up delay-2">
+                    <p>Phương Thức Bảo Mật Thanh Toán</p>
+                    <div class="payment-icons">
+                        <i class="fa-brands fa-stripe"></i>
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-brands fa-cc-amex"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         CANDIDATE PORTAL
+         ========================================== -->
+    <div id="candidate-portal" class="portal-view">
+        <!-- Candidate Hero -->
+        <header class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge">
+                        <span class="badge-dot" style="background:#0ea5e9; box-shadow: 0 0 10px #0ea5e9;"></span>
+                        Dành Cho Ứng Viên
+                    </div>
+                    <h1 class="hero-title">
+                        Trúng Tuyển Vì Năng Lực. <br>
+                        <span class="text-gradient" style="background: linear-gradient(135deg, #0ea5e9, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent;">Không Chỉ Qua CV.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Thoát khỏi tỷ lệ tự động bị rớt bởi các hệ thống ATS truyền thống cũ kĩ. Tự tin bộc lộ kỹ năng chứng minh cho nhà quản lý trực tiếp qua những đánh giá từ AI uy tín nhất.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-large applicant-btn">
+                            Mở Tài Khoản Miễn Phí <i class="fa-solid fa-rocket"></i>
+                        </button>
+                        <button class="btn btn-secondary btn-large">
+                            Tra Cứu Gợi Ý Việc Làm
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">0%</span>
+                            <span class="stat-label">Sự Thiên Vị, Ưu Ái Cá Nhân</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Cạnh Tranh & Thực Tâm Khách Quan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="glass-card mockup-card" style="background: rgba(14, 165, 233, 0.05); border-color: rgba(14, 165, 233, 0.2);">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="mockup-title">Biểu Đồ Khả Năng Của Bạn</div>
+                        </div>
+                        <div class="mockup-body" style="text-align:center;">
+                            <img src="https://ui-avatars.com/api/?name=You&background=0ea5e9&color=fff" alt="You" class="avatar" style="width:80px; height:80px; margin-bottom:1rem;">
+                            <h3 style="margin-bottom:0.5rem;">Số Điểm Đạt: Thuộc Top 5%</h3>
+                            <p style="font-size:0.875rem; color:var(--text-secondary); margin-bottom:1.5rem;">Senior Software Engineer</p>
+                            
+                            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; border-top:1px solid var(--glass-border); padding-top:1rem;">
+                                <div style="text-align:left;">
+                                    <div style="font-size:0.75rem; color:var(--text-secondary);">Phán Đoán Logic</div>
+                                    <div style="font-weight:600; color:#10b981;">98 / 100</div>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-size:0.75rem; color:var(--text-secondary);">Thực Hành Trọng Điểm</div>
+                                    <div style="font-weight:600; color:#0ea5e9;">95 / 100</div>
+                                </div>
+                            </div>
+                            
+                            <div class="mockup-action">
+                                <button class="btn btn-outline btn-full applicant-btn"><i class="fa-solid fa-play"></i> Thu Video Giới Thiệu Chào Khách</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-1" style="animation-delay: -2s;">
+                        <i class="fa-solid fa-bullseye text-primary"></i>
+                        <span>Tiếp cận Nhanh Quyết Định Tuyển Bất Kể Lúc Nào</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Candidate How It Works -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tiến Mạch Con Đường Chinh Phục Của Bạn</h2>
+                    <p class="section-subtitle">Chỉ vài bước công thành công để xác minh thứ đáng giá nhất - Năng Lực.</p>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step-card glass-card">
+                        <div class="step-number">01</div>
+                        <div class="step-icon"><i class="fa-regular fa-id-card"></i></div>
+                        <h3>Mở Hồ Sơ Ứng Viên</h3>
+                        <p>Kể cho hệ thống biết lý lịch học vấn. Cấu tạo cơ bản của con đường sự nghiệp kết nối trực tiếp đến LinkedIn.</p>
+                    </div>
+                    
+                    <div class="step-card glass-card">
+                        <div class="step-number">02</div>
+                        <div class="step-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Chấp Nhận Tham Khảo Đề Trắc Nghiệm AI</h3>
+                        <p>Hệ thống mô phỏng một góc nhỏ việc làm bạn đang mong đợi thử sức ngay từ giây phút sơ khai. Tôn trọng trình giải quyết kỹ năng Toán.</p>
+                    </div>
+                    
+                    <div class="step-card glass-card">
+                        <div class="step-number">03</div>
+                        <div class="step-icon"><i class="fa-solid fa-video"></i></div>
+                        <h3>Video Trực Quan </h3>
+                        <p>Dùng điện thoại thông minh để truyền tải thái độ tính cách năng động thông qua việc phác thảo những câu trả lời 1 phút dễ nhìn.</p>
+                    </div>
+                    
+                    <div class="step-card glass-card">
+                        <div class="step-number">04</div>
+                        <div class="step-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <h3>Kí Hợp Đồng</h3>
+                        <p>Từ mức điểm ưu việt nhận được công bố thành thạo. Trưởng Bộ Phận Nhân Sự từ mọi nơi mời bạn tới ngay lập tức để ngồi thỏa thuận những bước tiếp hợp đồng thành công.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Candidate Features Section -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nền Tảng Gốc Ưu Khuyến Cạnh Phục Sinh Duyên</h2>
+                    <p class="section-subtitle">Chúng tôi khao khát ứng viên sẽ xuất sắc ở bất cứ chân trời nào không băn khoăn vướng bận hệ lụy học đường nền tảng.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon bg-gradient-2"><i class="fa-solid fa-award"></i></div>
+                        <h3>Trình Trọng Dấu Ấn Kỹ Trí</h3>
+                        <p>Nhận ngay một hệ giấy chứng chỉ xếp hạng so với muôn vạn đồng cấp chuyên ngành. Dữ liệu đánh giá từ khả năng làm.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon bg-gradient-4"><i class="fa-solid fa-eye-slash"></i></div>
+                        <h3>Chế Độ Xác Khảo Vô Lăng</h3>
+                        <p>Phía doanh nghiệp sẽ xem độ cao siêu từ thông tin không đi kèm đặc tuyến sinh trắc hay tính phái.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <div class="feature-icon bg-gradient-1"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Một Hồ Sơ - Vạn Vị Trí</h3>
+                        <p>Sử dụng nguyên bảng điểm đánh giá sơ lược được để tham chiếu tuyển dụng đa ngành. Thao tác siêu tốc không rườm rà form mẫu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Candidate Pricing Section -->
+        <section class="section">
+            <div class="container">
+                <div class="pricing-grid" style="grid-template-columns: 1fr; max-width: 500px;">
+                    <div class="pricing-card glass-card popular" style="border-color: rgba(14, 165, 233, 0.4); text-align:center;">
+                        <div class="popular-badge" style="background:#0ea5e9;">100% Phim Miễn Phí</div>
+                        <div class="pricing-header">
+                            <h3>Giá Của Sự Chăm Cày</h3>
+                            <p>Tài năng không cần chi trả thêm một đồng khoản nào.</p>
+                            <div class="price" style="justify-content:center;">
+                                <span class="currency">$</span>
+                                <span class="amount">0</span>
+                                <span class="billing">/ Xuyên Suốt</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features" style="text-align:left;">
+                            <ul>
+                                <li><i class="fa-solid fa-check" style="color:#0ea5e9;"></i> Tạo Tài Khoản Không Giới Hạn Phi Hoặc Gói</li>
+                                <li><i class="fa-solid fa-check" style="color:#0ea5e9;"></i> Làm AI Skill Tests Vô Vàn Không Chặn</li>
+                                <li><i class="fa-solid fa-check" style="color:#0ea5e9;"></i> Ghép Cặp Quản Lý Mọi Nơi Tuyệt Đối Tức Thời</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-action">
+                            <button class="btn btn-primary btn-full applicant-btn" style="background:#0ea5e9; color:white; box-shadow:0 4px 15px rgba(14, 165, 233, 0.2);">Trở Thành Nhân Vật Chính</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Final CTA Global -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box glass-card fade-in-up">
+                <div class="cta-content">
+                    <h2 id="global-cta-title">Sẵn sàng để chuyển đổi bước chuyển Mình Của Nền Việc Làm?</h2>
+                    <p id="global-cta-desc">Hòa nhập vào kỷ nguyên sáng chói của tuyển dụng trực tuyến.</p>
+                </div>
+                <div class="cta-actions" style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                    <a href="#pricing" class="btn btn-primary btn-large">Tìm Nhóm Viên</a>
+                    <button class="btn btn-secondary btn-large applicant-btn">Làm Nghề Đích Thực</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fa-solid fa-brain"></i>
+                        NexHire<span>AI</span>
+                    </a>
+                    <p>Hệ sinh thái thông tuệ trí tuệ song cực dành cho tìm việc khách quan tối thượng.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Sản Phẩm</h4>
+                    <a href="#features">Tính năng chính</a>
+                    <a href="#how-it-works">Mô hình Hoạt động</a>
+                    <a href="#pricing">Thông tin Mức Thu Phí</a>
+                </div>
+                <!-- Standard Footer Links -->
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NexHire AI. Đã đăng ký bản quyền.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Employer Payment Modal (Simulated) -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content glass-card">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h3>Xác nhận Thanh toán</h3>
+                <p id="modal-plan-desc">NexHire AI Subscription</p>
+            </div>
+            <div class="checkout-form" id="employer-signup-form">
+                <div class="form-group">
+                    <label>Địa chỉ Email</label>
+                    <input type="email" placeholder="you@company.com">
+                </div>
+                <button class="btn btn-primary btn-full stripe-pay-btn" onclick="submitMVP(this, 'employers/subscribe')">
+                    <i class="fa-solid fa-lock"></i> Trả Tiền <span id="modal-price">$0</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Candidate Signup Modal -->
+    <div class="modal" id="candidate-modal">
+        <div class="modal-content glass-card" style="border-top: 4px solid #0ea5e9;">
+            <button class="close-candidate-modal close-modal" style="right: 1.5rem; position:absolute; z-index:10;"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h3>Kích Hoạt Tài Khoản Hồ Sơ Bạn</h3>
+                <p>Khám phá môi trường việc làm lý tưởng ngay.</p>
+            </div>
+            <div class="checkout-form" id="candidate-signup-form" style="max-height: 60vh; overflow-y: auto; padding-right: 1rem;">
+                <div class="form-group">
+                    <label>Họ Tên</label>
+                    <input type="text" placeholder="Sarah Jenkins">
+                </div>
+                <div class="form-group">
+                    <label>E-Mail Thông Dụng</label>
+                    <input type="email" placeholder="sarah@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Upload CV (Không Bắt Buộc)</label>
+                    <input type="file" name="cv_file" accept=".pdf,.doc,.docx" style="padding: 0.5rem; background: transparent; border: 1px dashed var(--glass-border);">
+                </div>
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label>Upload Video Chào Khách 1-Phút (Không Bắt Buộc)</label>
+                    <input type="file" name="video_file" accept="video/*" style="padding: 0.5rem; background: transparent; border: 1px dashed var(--glass-border);">
+                </div>
+                <div style="text-align: center; margin: 1rem 0; color: var(--text-secondary); font-size: 0.875rem;">— HOẶC ĐIỀN THỦ CÔNG —</div>
+                <div class="form-group">
+                    <label>Liên Kết Hồ Sơ LinkedIn</label>
+                    <input type="url" placeholder="https://linkedin.com/in/sarahjenkins">
+                </div>
+                <div class="form-group">
+                    <label>Kỹ Năng Cốt Lõi & Kinh Nghiệm</label>
+                    <textarea rows="3" placeholder="VD: 5 năm kinh nghiệm React, Python..." style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 0.5rem; color: white; resize: vertical; font-family: inherit; margin-top: 0.5rem;"></textarea>
+                </div>
+                <button class="btn btn-primary btn-full" style="background:#0ea5e9; color:white;" onclick="submitMVP(this, 'candidates')">
+                    Chính Thức Hành Trình
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function submitMVP(btn, endpoint) {
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Đang xử lý...';
+            btn.disabled = true;
+            
+            let formData = new FormData();
+            const formContainer = btn.closest('.checkout-form');
+            const inputs = formContainer.querySelectorAll('input, textarea');
+            inputs.forEach(i => {
+                if (i.type === "file" && i.files.length > 0) {
+                    formData.append(i.name || 'file', i.files[0]);
+                } else if (i.type !== "file") {
+                    let fieldName = i.name;
+                    if (!fieldName) {
+                        if(i.type === "email") fieldName = "email";
+                        if(i.type === "text") fieldName = "name";
+                        if(i.type === "url") fieldName = "linkedin";
+                        if(i.tagName.toLowerCase() === "textarea") fieldName = "skills";
+                    }
+                    if (fieldName) formData.append(fieldName, i.value);
+                }
+            });
+
+            if (endpoint.includes('employers')) {
+                formData.append('plan', document.getElementById('modal-plan-desc')?.innerText || 'Starter');
+            }
+
+            try {
+                const res = await fetch(`/api/${endpoint}`, {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+                alert(data.message || 'Thành công!');
+                btn.closest('.modal').classList.remove('active');
+                setTimeout(() => btn.closest('.modal').style.display = 'none', 300);
+            } catch (err) {
+                alert('Lỗi truy xuất máy chủ cơ sở dữ liệu.');
+            }
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

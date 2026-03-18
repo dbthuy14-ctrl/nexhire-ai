@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexHire AI - Core Engine Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .demo-container { max-width: 900px; margin: 8rem auto; padding: 0 2rem; }
+        .demo-card { padding: 2rem; margin-bottom: 2rem; }
+        .demo-card h2 { margin-bottom: 1rem; color: var(--primary-color); }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-secondary); }
+        .form-group input, .form-group textarea { width: 100%; padding: 1rem; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 0.5rem; color: white; font-family: inherit; }
+        pre.response-box { background: #111; padding: 1rem; border-radius: 0.5rem; color: #a5b4fc; overflow-x: auto; white-space: pre-wrap; font-size: 0.875rem; border: 1px solid var(--glass-border); display: none; }
+    </style>
+</head>
+<body>
+    <div class="glow-orb orb-1"></div>
+    <div class="bg-grid"></div>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">NexHire<span>AI Engine Sandbox</span></a>
+            <div class="nav-links"><a href="/">Back to Website</a></div>
+        </div>
+    </nav>
+
+    <div class="demo-container">
+        <!-- AI Job Post -->
+        <div class="demo-card glass-card">
+            <h2>1. Generate AI Job Post</h2>
+            <div class="form-group">
+                <label>Input Prompt</label>
+                <input type="text" id="job-prompt" value="Senior Backend Developer (Python) who loves fast paced environments">
+            </div>
+            <button class="btn btn-primary" onclick="testAI('job-post', { prompt: document.getElementById('job-prompt').value }, 'res-1')">Generate Job Post</button>
+            <pre class="response-box" id="res-1"></pre>
+        </div>
+
+        <!-- AI CV Screening -->
+        <div class="demo-card glass-card">
+            <h2>2. Screen Candidate CV</h2>
+            <div class="form-group">
+                <label>Job Requirements</label>
+                <input type="text" id="cv-req" value="React, Node.js, 5 years experience">
+            </div>
+            <div class="form-group">
+                <label>Extracted CV Text</label>
+                <textarea id="cv-text" rows="3">Sarah Jenkins. Developed scalable components in React for 6 years. Handled Node backend architecture.</textarea>
+            </div>
+            <button class="btn btn-primary" onclick="testAI('screen-cv', { cv_text: document.getElementById('cv-text').value, requirements: document.getElementById('cv-req').value }, 'res-2')">Evaluate Candidate</button>
+            <pre class="response-box" id="res-2"></pre>
+        </div>
+
+        <!-- AI Test Generation -->
+        <div class="demo-card glass-card">
+            <h2>3. Generate Custom Test</h2>
+            <div class="form-group">
+                <label>Role</label>
+                <input type="text" id="test-role" value="Fullstack Engineer">
+            </div>
+            <div class="form-group">
+                <label>Candidate Skills Identified</label>
+                <input type="text" id="test-skills" value="React, Node.js">
+            </div>
+            <button class="btn btn-primary" onclick="testAI('generate-test', { role: document.getElementById('test-role').value, skills: document.getElementById('test-skills').value }, 'res-3')">Create Micro-Test</button>
+            <pre class="response-box" id="res-3"></pre>
+        </div>
+    </div>
+
+    <script>
+        async function testAI(endpoint, payload, resultId) {
+            const btn = event.target;
+            const resBox = document.getElementById(resultId);
+            btn.innerText = "Processing...";
+            resBox.style.display = 'block';
+            resBox.innerText = 'Analyzing prompt and running inference...';
+
+            try {
+                const response = await fetch(`/api/ai/${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                resBox.innerText = JSON.stringify(data, null, 2);
+            } catch (err) {
+                resBox.innerText = "Error: " + err.message;
+            }
+            btn.innerText = "Run Again";
+        }
+    </script>
+</body>
+</html>
