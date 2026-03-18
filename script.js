@@ -220,3 +220,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// ---- MVP Chatbot Logic ----
+async function sendChatMessage() {
+    const input = document.getElementById('chatbot-input-field');
+    const messages = document.getElementById('chatbot-messages');
+    if (!input || !input.value.trim()) return;
+
+    const userText = input.value.trim();
+    // Add user bubble
+    messages.innerHTML += `<div class="chat-bubble user">${userText}</div>`;
+    input.value = '';
+    messages.scrollTop = messages.scrollHeight;
+
+    // Add thinking bubble
+    const aiBubble = document.createElement('div');
+    aiBubble.className = 'chat-bubble ai';
+    aiBubble.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Thinking...';
+    messages.appendChild(aiBubble);
+    messages.scrollTop = messages.scrollHeight;
+
+    try {
+        const res = await fetch('/api/ai/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: userText })
+        });
+        const data = await res.json();
+        aiBubble.innerHTML = data.reply || "I am currently disconnected. Please check the backend.";
+    } catch (err) {
+        aiBubble.innerHTML = "Ah! Connection issue to the AI brain.";
+    }
+    messages.scrollTop = messages.scrollHeight;
+}
+// Add enter key support
+document.addEventListener('DOMContentLoaded', () => {
+    const chatInput = document.getElementById('chatbot-input-field');
+    if (chatInput) {
+        chatInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') sendChatMessage();
+        });
+    }
+});

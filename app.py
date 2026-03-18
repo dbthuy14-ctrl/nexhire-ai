@@ -139,6 +139,14 @@ def ai_generate_test():
     result = NexHireAIEngine.generate_dynamic_test(role, skills)
     return jsonify(result)
 
+@app.route('/api/ai/chat', methods=['POST'])
+def ai_chat():
+    data = request.json or {}
+    message = data.get('message', '')
+    reply = NexHireAIEngine.chat_with_assistant(message)
+    app.logger.info(f"AI Chat received message: {message}")
+    return jsonify({"reply": reply})
+
 if __name__ == '__main__':
     # Binds to 0.0.0.0 to make it publicly accessible if deployed in a container (Render, Heroku, etc)
     app.run(host='0.0.0.0', port=8000, debug=True)

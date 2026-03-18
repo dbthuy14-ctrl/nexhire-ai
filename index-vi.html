@@ -660,6 +660,30 @@
             btn.disabled = false;
         }
     </script>
+
+    <div class="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbot-toggle" onclick="document.getElementById('chatbot-window').classList.toggle('open')">
+            <i class="fa-solid fa-message"></i>
+        </button>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                Trợ lý NexHire
+                <button class="close-btn" onclick="document.getElementById('chatbot-window').classList.remove('open')">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chat-bubble ai">
+                    Xin chào! Tôi là trợ lý AI của NexHire. Bạn cần hướng dẫn sử dụng phiên bản thử nghiệm hay có bất kỳ thắc mắc nào về tuyển dụng không?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input-field" placeholder="Hỏi tôi bất kỳ điều gì...">
+                <button onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
